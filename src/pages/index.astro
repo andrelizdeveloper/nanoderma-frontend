@@ -1,0 +1,142 @@
+---
+
+// Components
+import Layout from '../layouts/Layout.astro';
+
+const sectionList:SectionData[] = [
+
+	{
+		title: 'Sección 1',
+		subtitle: 'Subtítulo 1',
+		description: `
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
+			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+		`,
+		bgImageClass: 'section-1-image'
+	},
+
+	{
+		title: 'Sección 2',
+		subtitle: 'Subtítulo 2',
+		description: `
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
+			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+		`,
+		bgImageClass: 'section-2-image'
+	},
+
+	{
+		title: 'Sección 3',
+		subtitle: 'Subtítulo 3',
+		description: `
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
+			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+		`,
+		bgImageClass: 'section-3-image'
+	}
+
+];
+
+const recomendacionesList = [
+	'/images/tips/img1.jpeg',
+	'/images/tips/img2.jpeg',
+	'/images/tips/img3.jpeg',
+	'/images/tips/img4.jpeg',
+	'/images/tips/img5.jpeg',
+	'/images/tips/img6.jpeg',
+	'/images/tips/img7.jpeg',
+	'/images/tips/img8.jpeg',
+]
+
+type SectionData = {
+	title:string;
+	subtitle:string
+	description:string;
+	bgImageClass:string;
+}
+
+---
+
+<Layout title="Casos de Éxito de Nanoderma por Gerardo Lizarán">
+
+	<header class="h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center p-8 md:p-12 text-center md:text-left gap-4">
+
+		<div class="flex flex-col">
+
+			<h1 class="text-2xl text-white font-semibold">Casos de Éxito de Nanoderma</h1>
+		
+			<h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
+
+		</div>
+
+		<div class="h-40 w-40 border-2 border-white rounded-full bg-white header-pp"/>
+
+	</header>
+
+	{sectionList.map((section, row) => (
+
+		<section class='bg-gray-100 flex flex-col md:grid md:grid-cols-2'>
+
+			<div class:list={[ 'h-auto p-8 md:p-12 flex flex-col justify-center', { 'md:order-1 bg-gray-800 text-white':(row % 2 !== 0), 'md:order-2 bg-gray-100':(row % 2 === 0) }]}>
+
+				<h2 class="text-sm">{section.subtitle}</h2>
+
+				<h2 class="text-xl font-medium">{section.title}</h2>
+
+				<p>{section.description}</p>
+
+			</div>
+
+			<div class:list={[ `${section.bgImageClass} h-60 md:h-auto md:h-auto`, { 'md:order-1':(row % 2 === 0), 'md:order-2':(row % 2 !== 0) } ]}/>
+
+		</section>
+
+	))}
+
+	<section class="h-96 p-8 md:p-12 bg-gray-800">
+
+		<h2 class="text-white text-2xl font-semibold">Casos de Éxito</h2>
+
+	</section>
+
+	<section class="p-8 md:p-12 bg-gray-100 flex flex-col gap-4">
+
+		<h2 class="text-2xl font-semibold">Recomendaciones e Información de Nanoderma</h2>
+
+		<div class="flex flex-col md:grid md:grid-cols-3">
+
+			{recomendacionesList.map((tip) => <img src={tip}/>)}
+
+		</div>
+
+	</section>
+
+</Layout>
+
+<style>
+
+	.header-pp {
+		background-image: url('/images/header/img1.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.section-1-image {
+		background-image: url('/images/sections/img1.jpeg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.section-2-image {
+		background-image: url('/images/sections/img2.jpeg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.section-3-image {
+		background-image: url('/images/sections/img3.jpeg');
+		background-size: cover;
+		background-position: center;
+	}
+
+</style>

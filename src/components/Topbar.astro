@@ -1,0 +1,30 @@
+---
+
+import PurpleButton from './PurpleButton.astro';
+
+const sectionList:SectionData[] = [
+  { title: '¿Qué es Nanoderma?', id: 'nanoderma-title' },
+  { title: 'Fórmula', id: 'formula-title' },
+  { title: 'Casos de Éxito', id: 'casos-exito-title' },
+];
+
+type SectionData = {
+  title: string;
+  id: string;
+}
+
+---
+
+<navbar class="py-3 bg-gray-900 flex justify-between md:justify-center items-center gap-4 px-4">
+
+  <div class="hidden md:flex gap-4">
+
+    {sectionList.map((section) => <a href={`#${section.id}`} class="text-white px-4">{section.title}</a>)}
+
+  </div>
+
+  <span class="text-white">Nanoderma</span>
+
+  <PurpleButton>Contáctame</PurpleButton>
+
+</navbar>
