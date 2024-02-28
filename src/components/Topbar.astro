@@ -1,6 +1,7 @@
 ---
 
-import PurpleButton from './PurpleButton.astro';
+// Components
+import PurpleButton from './buttons/PurpleButton.astro';
 
 const sectionList:SectionData[] = [
   { title: '¿Qué es Nanoderma?', id: 'nanoderma-title' },
@@ -19,11 +20,12 @@ type SectionData = {
 
   <div class="hidden md:flex gap-4">
 
-    {sectionList.map((section) => <a href={`#${section.id}`} class="text-white px-4">{section.title}</a>)}
+    {sectionList.map((section) => 
+      <a href={`#${section.id}`} class="text-white px-4 py-2 rounded-full hover:bg-gray-700">{section.title}</a>)}
 
   </div>
 
-  <span class="text-white">Nanoderma</span>
+  <span class="text-white md:hidden">Nanoderma</span>
 
   <PurpleButton>Contáctame</PurpleButton>
 

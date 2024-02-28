@@ -3,6 +3,9 @@
 // Components
 import Layout from '../layouts/Layout.astro';
 
+// Sections
+import CasosSection from '../sections/CasosSection';
+
 const sectionList:SectionData[] = [
 
 	{
@@ -37,7 +40,7 @@ const sectionList:SectionData[] = [
 
 ];
 
-const recomendacionesList = [
+const recomendacionesList:string[] = [
 	'/images/tips/img1.jpeg',
 	'/images/tips/img2.jpeg',
 	'/images/tips/img3.jpeg',
@@ -92,12 +95,8 @@ type SectionData = {
 		</section>
 
 	))}
-
-	<section class="h-96 p-8 md:p-12 bg-gray-800">
-
-		<h2 class="text-white text-2xl font-semibold">Casos de Éxito</h2>
-
-	</section>
+	
+	<CasosSection client:visible/>
 
 	<section class="p-8 md:p-12 bg-gray-100 flex flex-col gap-4">
 
@@ -138,5 +137,9 @@ type SectionData = {
 		background-size: cover;
 		background-position: center;
 	}
+	
+	.blured-image {
+		filter: blur(5px);
+	}
 
-</style>
+</style>../components/buttons/WhiteButton.ts
