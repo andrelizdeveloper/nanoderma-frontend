@@ -12,45 +12,51 @@ export default function CasosSection () {
 
   return (
 
-    <section className="p-8 md:p-12 bg-gray-800 flex flex-col gap-4">
+    <>
 
-      <div className="flex justify-between items-center">
+      <div id="casos-exito-title"/>
 
-        <h2 className="text-white text-2xl font-semibold">Casos de Éxito</h2>
+      <section className="p-8 md:p-12 bg-gray-800 flex flex-col gap-4">
 
-        <WhiteButton onClick={toggleShowPhotos} label={(isShowingPhotos) ? 'Ocultar Fotos' : 'Mostrar Fotos'} />
+        <div className="flex justify-between items-center">
 
-      </div>
+          <h2 className="text-white text-2xl font-semibold">Casos de Éxito</h2>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-12">
+          <WhiteButton onClick={toggleShowPhotos} label={(isShowingPhotos) ? 'Ocultar Fotos' : 'Mostrar Fotos'} />
 
-        {casosExitoList.map((caso, key) => (
+        </div>
 
-          <div className="flex flex-col gap-4" key={key}>
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-12">
 
-            <div>
+          {casosExitoList.map((caso, key) => (
 
-              <h3 className="text-white">{caso.subtitle}</h3>
+            <div className="flex flex-col gap-4" key={key}>
 
-              <h2 className="text-white text-xl font-semibold">{caso.title}</h2>
+              <div>
 
-              <p className="text-white">{caso.description}</p>
+                <h3 className="text-white">{caso.subtitle}</h3>
+
+                <h2 className="text-white text-xl font-semibold">{caso.title}</h2>
+
+                <p className="text-white">{caso.description}</p>
+
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4">
+
+                {caso.images.map((img, key) => <img src={img} style={{ filter:(isShowingPhotos) ? '' : 'blur(5px)' }} key={key}/>)}
+
+              </div>
 
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4">
+          ))}
 
-              {caso.images.map((img, key) => <img src={img} style={{ filter:(isShowingPhotos) ? '' : 'blur(5px)' }} key={key}/>)}
+        </div>
 
-            </div>
+      </section>
 
-          </div>
-
-        ))}
-
-      </div>
-
-    </section>
+    </>
 
   )
   

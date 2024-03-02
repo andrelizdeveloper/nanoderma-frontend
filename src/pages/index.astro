@@ -2,6 +2,7 @@
 
 // Components
 import Layout from '../layouts/Layout.astro';
+import PurpleButton from '../components/buttons/PurpleButton.astro';
 
 // Sections
 import CasosSection from '../sections/CasosSection';
@@ -9,33 +10,39 @@ import CasosSection from '../sections/CasosSection';
 const sectionList:SectionData[] = [
 
 	{
-		title: 'Sección 1',
-		subtitle: 'Subtítulo 1',
+		subtitle: '',
+		title: '¿Qué es Nanoderma?',
 		description: `
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+			Nanoderma es un auxiliar de la cicatrización, que surge en el ámbito de la 
+			fisicoquímica de nanometriales, evidenciando con muy buenos resultados, con la 
+			satisfacción personal de ver como muchos pacientes recuperan su salud, mejorando su calidad de vida.
 		`,
-		bgImageClass: 'section-1-image'
+		bgImageClass: 'section-1-image',
+		id:'nanoderma-title'
 	},
 
 	{
-		title: 'Sección 2',
-		subtitle: 'Subtítulo 2',
+		subtitle: '',
+		title: 'BUAP y Patente',
 		description: `
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+			Nanoderma es un desarrollo orgullosamente de la Benemérita Universidad Autónoma de Puebla, BUAP. 
+			En su proceso de fabricación toma 25 etapas perfectamente controladas y sistematizadas.
+			Obtiene su registro de patente #356103, en marzo de 2018.
+			Así mismo obtiene su registro sanitario de cofepris # 2191C2018 SSA, en septiembre del 2019.
 		`,
-		bgImageClass: 'section-2-image'
+		bgImageClass: 'section-2-image',
+		id:'buap-title'
 	},
 
 	{
-		title: 'Sección 3',
-		subtitle: 'Subtítulo 3',
+		subtitle: '',
+		title: 'Formulación',
 		description: `
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-			sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+			Nanoderma es un desarrollo que surge luego de más de 10 años de investigación, 
+			tiempo en el que se estudió de cerca a las zeolitas y la planta tournefortia.
 		`,
-		bgImageClass: 'section-3-image'
+		bgImageClass: 'section-3-image',
+		id:'formula-title'
 	}
 
 ];
@@ -51,24 +58,55 @@ const recomendacionesList:string[] = [
 	'/images/tips/img8.jpeg',
 ]
 
+const myWorkImages:string[] = [
+	'/images/mi-trabajo/img4.jpeg',
+	'/images/mi-trabajo/img2.jpeg',
+	'/images/mi-trabajo/img3.jpeg',
+];
+
 type SectionData = {
 	title:string;
 	subtitle:string
 	description:string;
 	bgImageClass:string;
+	id:string;
 }
 
 ---
 
 <Layout title="Casos de Éxito de Nanoderma por Gerardo Lizarán">
 
+	<div id="contact-me-title"/>
+
 	<header class="h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center p-8 md:p-12 text-center md:text-left gap-4">
 
-		<div class="flex flex-col">
+		<div class="flex flex-col gap-4">
 
-			<h1 class="text-2xl text-white font-semibold">Casos de Éxito de Nanoderma</h1>
+			<div>
+
+				<h1 class="text-2xl text-white font-semibold">Casos de Éxito de Nanoderma</h1>
 		
-			<h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
+				<h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
+
+			</div>
+
+			<div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
+
+				<a href="https://wa.me/522293460202" target="_blank">
+
+					<PurpleButton>
+
+						<span class="text-white">Whatsapp</span>
+		
+						<svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1h-6.6a1 1 0 0 0-.7.3l-2.9 2.5c-.3.3-.8.1-.8-.3V17c0-.6-.4-1-1-1H5a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z"/>
+						</svg>
+		
+					</PurpleButton>
+
+				</a>
+
+			</div>
 
 		</div>
 
@@ -78,7 +116,7 @@ type SectionData = {
 
 	{sectionList.map((section, row) => (
 
-		<section class='bg-gray-100 flex flex-col md:grid md:grid-cols-2'>
+		<section class='bg-gray-100 flex flex-col-reverse md:grid md:grid-cols-2' id={section.id}>
 
 			<div class:list={[ 'h-auto md:h-96 p-8 md:p-12 flex flex-col justify-center', { 'md:order-1 bg-gray-800 text-white':(row % 2 !== 0), 'md:order-2 bg-gray-100':(row % 2 === 0) }]}>
 
@@ -98,9 +136,21 @@ type SectionData = {
 	
 	<CasosSection client:visible/>
 
-	<section class="p-8 md:p-12 bg-gray-100 flex flex-col gap-4">
+	<section class="bg-gray-100 p-8 md:p-12 gap-4 flex flex-col">
 
-		<h2 class="text-2xl font-semibold">Recomendaciones e Información de Nanoderma</h2>
+		<h2 class="text-2xl font-semibold">Mi Trabajo</h2>
+
+		<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4">
+
+			{myWorkImages.map((img) => <img src={img}/>)}
+
+		</div>
+
+	</section>
+
+	<section class="p-8 md:p-12 bg-gray-800 flex flex-col gap-4">
+
+		<h2 class="text-2xl font-semibold text-white">Recomendaciones e Información de Nanoderma</h2>
 
 		<div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
@@ -142,4 +192,4 @@ type SectionData = {
 		filter: blur(5px);
 	}
 
-</style>../components/buttons/WhiteButton.ts
+</style>
