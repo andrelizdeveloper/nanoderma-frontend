@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // Components
-import WhiteButton from '../components/buttons/WhiteButton';
+import PurpleButton from '../components/buttons/PurpleButton';
 
 export default function CasosSection () {
 
@@ -22,7 +22,9 @@ export default function CasosSection () {
 
           <h2 className="text-white text-2xl font-semibold">Casos de Éxito</h2>
 
-          <WhiteButton onClick={toggleShowPhotos} label={(isShowingPhotos) ? 'Ocultar Fotos' : 'Mostrar Fotos'} />
+          <PurpleButton onClick={toggleShowPhotos}>
+            {(isShowingPhotos) ? 'Ocultar Fotos' : 'Mostrar Fotos'}
+          </PurpleButton>
 
         </div>
 
@@ -44,7 +46,7 @@ export default function CasosSection () {
 
               <div className="grid grid-cols-2 md:grid-cols-4">
 
-                {caso.images.map((img, key) => <img src={img} style={{ filter:(isShowingPhotos) ? '' : 'blur(5px)' }} key={key}/>)}
+                {caso.images.map((img, key) => <img src={img} className='aspect-square' style={{ filter:(isShowingPhotos) ? '' : 'blur(5px)' }} key={key}/>)}
 
               </div>
 
@@ -66,13 +68,13 @@ export default function CasosSection () {
 const casosExitoList:CasoExitoData[] = [
 
   {
-    title: 'Caso de Éxito 1',
-    subtitle: 'Subtítulo 1',
+    title: 'Cáncer de Piel en Cara',
+    subtitle: 'Veracruz, Ver.',
     description: `
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-      sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+      Másculino, 76 años. Diabético e hipertenso. Recibió injerto. Evolución 2 meses. Inició 05/10/2023. Finalizó 05/12/2023.
     `,
     images: [
+      '/images/casos/caso-1/img5.jpg',
       '/images/casos/caso-1/img3.jpg',
       '/images/casos/caso-1/img1.jpg',
       '/images/casos/caso-1/img4.jpg',
@@ -81,32 +83,66 @@ const casosExitoList:CasoExitoData[] = [
   },
 
   {
-    title: 'Caso de Éxito 2',
-    subtitle: 'Subtítulo 2',
+    title: 'Hérida por Infección por E. Cloacae y E. Coli',
+    subtitle: 'Veracruz, Ver.',
     description: `
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-      sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+      Femenino, 12 años. Inició 28/05/2022. Finalizó 21/07/2022.
     `,
     images: [
-      '/images/casos/caso-2/img1.jpg',
       '/images/casos/caso-2/img2.jpg',
+      '/images/casos/caso-2/img1.jpg',
       '/images/casos/caso-2/img3.jpg',
+      '/images/casos/caso-2/img6.jpg',
+      '/images/casos/caso-2/img5.jpg',
       '/images/casos/caso-2/img4.jpg',
     ]
   },
 
   {
-    title: 'Caso de Éxito 3',
-    subtitle: 'Subtítulo 3',
+    title: 'Pie Diabético',
+    subtitle: 'Soledad de Doblado, Ver.',
     description: `
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi id quibusdam voluptatum quisquam tempore cum culpa! Odit, 
-      sed doloremque nemo quisquam debitis, doloribus quidem eaque, dicta quia enim molestias error.
+      Masculino, 44 años. Evolución Diabetes Mellitus 10 años. Inició 10/09/2022. Finalizó 31/10/2022.
     `,
     images: [
       '/images/casos/caso-3/img4.jpg',
       '/images/casos/caso-3/img1.jpg',
+      '/images/casos/caso-3/img5.jpg',
       '/images/casos/caso-3/img3.jpg',
+      '/images/casos/caso-3/img6.jpg',
       '/images/casos/caso-3/img2.jpg',
+    ]
+  },
+
+  {
+    title: 'Pie Diabético',
+    subtitle: 'Veracruz, Ver.',
+    description: `
+      Masculino, 48 años. Evolución Diabetes Mellitus 12 años. Inició 04/05/2022. Finalizó 20/02/2023.
+    `,
+    images: [
+      '/images/casos/caso-4/img5.jpg',
+      '/images/casos/caso-4/img1.jpg',
+      '/images/casos/caso-4/img2.jpg',
+      '/images/casos/caso-4/img6.jpg',
+      '/images/casos/caso-4/img4.jpg',
+      '/images/casos/caso-4/img7.jpg',
+    ]
+  },
+
+  {
+    title: 'Quemadura de 2do Grado con Leña de Fogón',
+    subtitle: 'Jamapa, Ver.',
+    description: `
+      Femenino, 82 años. Inició 07/08/2022. Finalizó 25/09/2022.
+    `,
+    images: [
+      '/images/casos/caso-5/img7.jpg',
+      '/images/casos/caso-5/img6.jpg',
+      '/images/casos/caso-5/img5.jpg',
+      '/images/casos/caso-5/img3.jpg',
+      '/images/casos/caso-5/img2.jpg',
+      '/images/casos/caso-5/img4.jpg',
     ]
   },
 

@@ -2,7 +2,7 @@
 
 // Components
 import Layout from '../layouts/Layout.astro';
-import PurpleButton from '../components/buttons/PurpleButton.astro';
+import PurpleButton from '../components/buttons/PurpleButton';
 
 // Sections
 import CasosSection from '../sections/CasosSection';
@@ -11,11 +11,11 @@ const sectionList:SectionData[] = [
 
 	{
 		subtitle: '',
-		title: '¿Qué es Nanoderma?',
+		title: 'NANODERMA y Registros',
 		description: `
-			Nanoderma es un auxiliar de la cicatrización, que surge en el ámbito de la 
-			fisicoquímica de nanometriales, evidenciando con muy buenos resultados, con la 
-			satisfacción personal de ver como muchos pacientes recuperan su salud, mejorando su calidad de vida.
+			NANODERMA es un auxiliar de la cicatrización, que surge en el ámbito de la 
+			fisicoquímica de nanometriales. Obtiene su registro de patente #356103, en marzo de 2018. 
+			Así mismo, obtiene su registro sanitario de COFEPRIS #2191C2018 SSA, en septiembre del 2019.
 		`,
 		bgImageClass: 'section-1-image',
 		id:'nanoderma-title'
@@ -23,27 +23,17 @@ const sectionList:SectionData[] = [
 
 	{
 		subtitle: '',
-		title: 'BUAP y Patente',
+		title: 'BUAP',
 		description: `
-			Nanoderma es un desarrollo orgullosamente de la Benemérita Universidad Autónoma de Puebla, BUAP. 
-			En su proceso de fabricación toma 25 etapas perfectamente controladas y sistematizadas.
-			Obtiene su registro de patente #356103, en marzo de 2018.
-			Así mismo obtiene su registro sanitario de cofepris # 2191C2018 SSA, en septiembre del 2019.
+			NANODERMA es un desarrollo orgullosamente de la Benemérita Universidad Autónoma de Puebla, BUAP. 
+			En su proceso de fabricación toma 25 etapas perfectamente controladas y sistematizadas. NANODERMA 
+			es un desarrollo que surge luego de más de 10 años de investigación, tiempo en el que se estudió de 
+			cerca a las zeolitas y la planta tournefortia. Pulsis Patent, trabaja de manera integrada con empresas
+			certificadas y especializadas como son: PHARMAPACK e ININ.
 		`,
 		bgImageClass: 'section-2-image',
 		id:'buap-title'
 	},
-
-	{
-		subtitle: '',
-		title: 'Formulación',
-		description: `
-			Nanoderma es un desarrollo que surge luego de más de 10 años de investigación, 
-			tiempo en el que se estudió de cerca a las zeolitas y la planta tournefortia.
-		`,
-		bgImageClass: 'section-3-image',
-		id:'formula-title'
-	}
 
 ];
 
@@ -59,10 +49,35 @@ const recomendacionesList:string[] = [
 ]
 
 const myWorkImages:string[] = [
-	'/images/mi-trabajo/img4.jpeg',
+	'/images/mi-trabajo/img1.jpeg',
 	'/images/mi-trabajo/img2.jpeg',
 	'/images/mi-trabajo/img3.jpeg',
+	'/images/mi-trabajo/img4.jpeg',
+	'/images/mi-trabajo/img5.jpeg',
+	'/images/mi-trabajo/img6.jpeg',
+	'/images/mi-trabajo/img7.jpeg',
+	'/images/mi-trabajo/img8.jpeg',
 ];
+
+const avancesList:string[] = [
+	'/images/avances/img1.jpeg',
+	'/images/avances/img2.jpeg',
+	'/images/avances/img3.jpeg',
+	'/images/avances/img4.jpeg',
+	'/images/avances/img5.jpeg',
+	'/images/avances/img6.jpeg',
+	'/images/avances/img7.jpeg',
+	'/images/avances/img8.jpeg',
+	'/images/avances/img9.jpeg',
+	'/images/avances/img10.jpeg',
+	'/images/avances/img11.jpeg',
+	'/images/avances/img12.jpeg',
+	'/images/avances/img13.jpeg',
+	'/images/avances/img14.jpeg',
+	'/images/avances/img15.jpeg',
+	'/images/avances/img16.jpeg',
+	'/images/avances/img17.jpeg',
+]
 
 type SectionData = {
 	title:string;
@@ -74,33 +89,42 @@ type SectionData = {
 
 ---
 
-<Layout title="Casos de Éxito de Nanoderma por Gerardo Lizarán">
+<Layout title="Casos de Éxito de NANODERMA por Gerardo Lizarán">
 
 	<div id="contact-me-title"/>
 
-	<header class="h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center p-8 md:p-12 text-center md:text-left gap-4">
+	<header class="md:h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center p-8 md:p-12 text-center md:text-left gap-4">
 
 		<div class="flex flex-col gap-4">
 
-			<div>
+			<div class="text-white">
 
-				<h1 class="text-2xl text-white font-semibold">Casos de Éxito de Nanoderma</h1>
+				<h1 class="text-2xl text-white font-semibold">Casos de Éxito de NANODERMA</h1>
 		
 				<h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
+
+				<p class="md:w-8/12">
+					Representante médico de Pulsis Patent, con 25 años de experiencia en el área de la salud.
+					Desarrollando este producto en el Puerto de Veracruz y demás ciudades.
+				</p>
 
 			</div>
 
 			<div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
 
-				<a href="https://wa.me/522293460202" target="_blank">
+				<a href="https://wa.me/522291614442?text=Hola,%20buen%20día,%20me%20interesa%20saber%20sobre%20NANODERMA" target="_blank">
 
 					<PurpleButton>
 
-						<span class="text-white">Whatsapp</span>
-		
-						<svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1h-6.6a1 1 0 0 0-.7.3l-2.9 2.5c-.3.3-.8.1-.8-.3V17c0-.6-.4-1-1-1H5a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z"/>
-						</svg>
+						<>
+
+							<span class="text-white">Whatsapp</span>
+			
+							<svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1h-6.6a1 1 0 0 0-.7.3l-2.9 2.5c-.3.3-.8.1-.8-.3V17c0-.6-.4-1-1-1H5a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z"/>
+							</svg>
+
+						</>
 		
 					</PurpleButton>
 
@@ -118,7 +142,7 @@ type SectionData = {
 
 		<section class='bg-gray-100 flex flex-col-reverse md:grid md:grid-cols-2' id={section.id}>
 
-			<div class:list={[ 'h-auto md:h-96 p-8 md:p-12 flex flex-col justify-center', { 'md:order-1 bg-gray-800 text-white':(row % 2 !== 0), 'md:order-2 bg-gray-100':(row % 2 === 0) }]}>
+			<div class:list={[ 'h-auto md:h-96 p-8 md:p-12 flex flex-col justify-center', { 'md:order-1 bg-gray-800 text-white':(row % 2 === 0), 'md:order-2 bg-gray-100':(row % 2 !== 0) }]}>
 
 				<h2 class="text-sm">{section.subtitle}</h2>
 
@@ -128,7 +152,7 @@ type SectionData = {
 
 			</div>
 
-			<div class:list={[ `${section.bgImageClass} h-60 md:h-auto md:h-auto`, { 'md:order-1':(row % 2 === 0), 'md:order-2':(row % 2 !== 0) } ]}/>
+			<div class:list={[ `${section.bgImageClass} h-60 md:h-auto md:h-auto`, { 'md:order-1':(row % 2 !== 0), 'md:order-2':(row % 2 === 0) } ]}/>
 
 		</section>
 
@@ -136,21 +160,33 @@ type SectionData = {
 	
 	<CasosSection client:visible/>
 
-	<section class="bg-gray-100 p-8 md:p-12 gap-4 flex flex-col">
+	<section class="p-8 md:p-12 bg-gray-100 flex flex-col gap-4">
 
-		<h2 class="text-2xl font-semibold">Mi Trabajo</h2>
+		<h2 class="text-2xl font-semibold text-gray-800">Avances NANODERMA</h2>
 
-		<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4">
+		<div class="flex flex-wrap gap-8">
 
-			{myWorkImages.map((img) => <img src={img}/>)}
+			{avancesList.map((avance) => <img src={avance} class="md:h-80"/>)}
 
 		</div>
 
 	</section>
 
-	<section class="p-8 md:p-12 bg-gray-800 flex flex-col gap-4">
+	<section class="bg-gray-800 p-8 md:p-12 gap-4 flex flex-col">
 
-		<h2 class="text-2xl font-semibold text-white">Recomendaciones e Información de Nanoderma</h2>
+		<h2 class="text-2xl font-semibold text-white">Mi Trabajo</h2>
+
+		<div class="flex flex-wrap gap-8">
+
+			{myWorkImages.map((img) => <img src={img} class="md:h-80"/>)}
+
+		</div>
+
+	</section>
+
+	<section class="p-8 md:p-12 bg-gray-100 flex flex-col gap-4">
+
+		<h2 class="text-2xl font-semibold">Recomendaciones e Información de NANODERMA</h2>
 
 		<div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
