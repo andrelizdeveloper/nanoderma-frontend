@@ -89,12 +89,12 @@ const casosExitoList:CasoExitoData[] = [
       Femenino, 12 años. Inició 28/05/2022. Finalizó 21/07/2022.
     `,
     images: [
-      '/images/casos/caso-2/img2.jpg',
-      '/images/casos/caso-2/img1.jpg',
-      '/images/casos/caso-2/img3.jpg',
-      '/images/casos/caso-2/img6.jpg',
-      '/images/casos/caso-2/img5.jpg',
-      '/images/casos/caso-2/img4.jpg',
+      '/images/casos/caso-2/img2.jpeg',
+      '/images/casos/caso-2/img1.jpeg',
+      '/images/casos/caso-2/img3.jpeg',
+      '/images/casos/caso-2/img6.jpeg',
+      '/images/casos/caso-2/img5.jpeg',
+      '/images/casos/caso-2/img4.jpeg',
     ]
   },
 
@@ -105,12 +105,12 @@ const casosExitoList:CasoExitoData[] = [
       Masculino, 44 años. Evolución Diabetes Mellitus 10 años. Inició 10/09/2022. Finalizó 31/10/2022.
     `,
     images: [
-      '/images/casos/caso-3/img4.jpg',
-      '/images/casos/caso-3/img1.jpg',
-      '/images/casos/caso-3/img5.jpg',
-      '/images/casos/caso-3/img3.jpg',
-      '/images/casos/caso-3/img6.jpg',
-      '/images/casos/caso-3/img2.jpg',
+      '/images/casos/caso-3/img4.jpeg',
+      '/images/casos/caso-3/img1.jpeg',
+      '/images/casos/caso-3/img5.jpeg',
+      '/images/casos/caso-3/img3.jpeg',
+      '/images/casos/caso-3/img6.jpeg',
+      '/images/casos/caso-3/img2.jpeg',
     ]
   },
 
@@ -121,12 +121,12 @@ const casosExitoList:CasoExitoData[] = [
       Masculino, 48 años. Evolución Diabetes Mellitus 12 años. Inició 04/05/2022. Finalizó 20/02/2023.
     `,
     images: [
-      '/images/casos/caso-4/img5.jpg',
-      '/images/casos/caso-4/img1.jpg',
-      '/images/casos/caso-4/img2.jpg',
-      '/images/casos/caso-4/img6.jpg',
-      '/images/casos/caso-4/img4.jpg',
-      '/images/casos/caso-4/img7.jpg',
+      '/images/casos/caso-4/img5.jpeg',
+      '/images/casos/caso-4/img1.jpeg',
+      '/images/casos/caso-4/img2.jpeg',
+      '/images/casos/caso-4/img6.jpeg',
+      '/images/casos/caso-4/img4.jpeg',
+      '/images/casos/caso-4/img7.jpeg',
     ]
   },
 
@@ -137,12 +137,12 @@ const casosExitoList:CasoExitoData[] = [
       Femenino, 82 años. Inició 07/08/2022. Finalizó 25/09/2022.
     `,
     images: [
-      '/images/casos/caso-5/img7.jpg',
-      '/images/casos/caso-5/img6.jpg',
-      '/images/casos/caso-5/img5.jpg',
-      '/images/casos/caso-5/img3.jpg',
-      '/images/casos/caso-5/img2.jpg',
-      '/images/casos/caso-5/img4.jpg',
+      '/images/casos/caso-5/img7.jpeg',
+      '/images/casos/caso-5/img6.jpeg',
+      '/images/casos/caso-5/img5.jpeg',
+      '/images/casos/caso-5/img3.jpeg',
+      '/images/casos/caso-5/img2.jpeg',
+      '/images/casos/caso-5/img4.jpeg',
     ]
   },
 
