@@ -74,11 +74,11 @@ const casosExitoList:CasoExitoData[] = [
       Másculino, 76 años. Diabético e hipertenso. Recibió injerto. Evolución 2 meses. Inició 05/10/2023. Finalizó 05/12/2023.
     `,
     images: [
-      '/images/casos/caso-1/img5.jpg',
-      '/images/casos/caso-1/img3.jpg',
-      '/images/casos/caso-1/img1.jpg',
-      '/images/casos/caso-1/img4.jpg',
-      '/images/casos/caso-1/img2.jpg',
+      '/images/casos/caso-1/img5.jpeg',
+      '/images/casos/caso-1/img3.jpeg',
+      '/images/casos/caso-1/img1.jpeg',
+      '/images/casos/caso-1/img4.jpeg',
+      '/images/casos/caso-1/img2.jpeg',
     ]
   },
 
