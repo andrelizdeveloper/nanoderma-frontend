@@ -6,6 +6,7 @@ import PurpleButton from '../components/buttons/PurpleButton';
 
 // Sections
 import CasosSection from '../sections/CasosSection';
+import VideosSection from '../sections/VideosSection';
 
 const sectionList:SectionData[] = [
 
@@ -46,7 +47,7 @@ const recomendacionesList:string[] = [
 	'/images/tips/img6.jpeg',
 	'/images/tips/img7.jpeg',
 	'/images/tips/img8.jpeg',
-]
+];
 
 const myWorkImages:string[] = [
 	'/images/mi-trabajo/img1.jpeg',
@@ -77,7 +78,7 @@ const avancesList:string[] = [
 	'/images/avances/img15.jpeg',
 	'/images/avances/img16.jpeg',
 	'/images/avances/img17.jpeg',
-]
+];
 
 type SectionData = {
 	title:string;
@@ -195,6 +196,8 @@ type SectionData = {
 		</div>
 
 	</section>
+
+	<VideosSection client:visible/>
 
 </Layout>
 

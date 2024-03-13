@@ -137,10 +137,10 @@ const casosExitoList:CasoExitoData[] = [
       Femenino, 82 años. Inició 07/08/2022. Finalizó 25/09/2022.
     `,
     images: [
-      '/images/casos/caso-5/img7.jpeg',
       '/images/casos/caso-5/img6.jpeg',
       '/images/casos/caso-5/img5.jpeg',
       '/images/casos/caso-5/img3.jpeg',
+      '/images/casos/caso-5/img1.jpeg',
       '/images/casos/caso-5/img2.jpeg',
       '/images/casos/caso-5/img4.jpeg',
     ]
