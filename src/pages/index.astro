@@ -38,7 +38,8 @@ const sectionList:SectionData[] = [
 
 ];
 
-const recomendacionesList:string[] = [
+const tipList:string[] = [
+	'/images/tips/img9.jpeg',
 	'/images/tips/img1.jpeg',
 	'/images/tips/img2.jpeg',
 	'/images/tips/img3.jpeg',
@@ -191,7 +192,7 @@ type SectionData = {
 
 		<div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
-			{recomendacionesList.map((tip) => <img src={tip}/>)}
+			{tipList.map((tip) => <img src={tip}/>)}
 
 		</div>
 

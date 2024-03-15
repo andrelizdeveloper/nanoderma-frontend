@@ -1,7 +1,7 @@
-
 const videoList:string[] = [
 	'https://nanoderma-gerardo.s3.us-east-2.amazonaws.com/video-1.mp4',
 	'https://nanoderma-gerardo.s3.us-east-2.amazonaws.com/video-2.mp4',
+	'https://nanoderma-gerardo.s3.us-east-2.amazonaws.com/video-3.mp4',
 ]
 
 export default function VideosSection () {
