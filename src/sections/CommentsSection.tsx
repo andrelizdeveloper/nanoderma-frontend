@@ -101,11 +101,11 @@ export default function CommentsSection () {
 
     <div className='bg-gray-100'>
 
-      <div className='p-8 md:p-12 bg-gray-100 flex flex-col gap-4'>
+      <div className='p-6 bg-gray-100 flex flex-col 6'>
 
-        <div className='flex flex-col md:grid md:grid-cols-2 gap-4'>
+        <div className='flex flex-col md:grid md:grid-cols-2 gap-6'>
 
-          <form className='flex flex-col gap-4' onSubmit={startPostComment}>
+          <form className='flex flex-col gap-6' onSubmit={startPostComment}>
 
             <h2 className="text-2xl font-semibold text-gray-800">Escribir Testimonio</h2>
 
@@ -141,7 +141,7 @@ export default function CommentsSection () {
 
           </form>
 
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-6'>
 
             <h2 className="text-2xl font-semibold text-gray-800">Testimonios</h2>
 
@@ -165,7 +165,7 @@ function ComponentElement (props:GetCommentData) {
 
     <div className='flex flex-col border border-gray-300 bg-white'>
 
-      <div className='flex flex-col gap-2 p-4'>
+      <div className='flex flex-col gap-2 p-6'>
 
         <div className='fle flex-col'>
 
@@ -189,7 +189,7 @@ function SuccessAlert () {
   
   return (
 
-    <div className='bg-green-100 border-l-4 border-green-500 text-green-700 p-4' role='alert'>
+    <div className='bg-green-100 border-l-4 border-green-500 text-green-700 p-6' role='alert'>
 
       <p className='font-bold'>Tu comentario ha sido publicado</p>
 
@@ -205,7 +205,7 @@ function ErrorAlert () {
   
   return (
 
-    <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4' role='alert'>
+    <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-6' role='alert'>
 
       <p className='font-bold'>Tu comentario no ha sido publicado</p>
 
