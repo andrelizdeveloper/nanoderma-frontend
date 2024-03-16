@@ -16,7 +16,7 @@ export default function VideosSection () {
 
         {videoList.map((row) => (
 
-          <video controls className="w-full h-full">
+          <video controls className="w-full h-full border border-gray-100">
 
             <source src={row} type="video/mp4"/>
 
