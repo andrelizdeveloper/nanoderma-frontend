@@ -12,7 +12,7 @@ export default function VideosSection () {
 
       <h2 className="text-2xl font-semibold text-white">Videos</h2>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
 
         {videoList.map((row) => (
 
