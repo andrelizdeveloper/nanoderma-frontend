@@ -3,9 +3,9 @@ export default function useDateHelper () {
   function getDMYDate () {
     const date = new Date();
     const day = date.getDate();
-    const month = date.getMonth();
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    return `${day}/${(month < 10) ? `0${month}` : month}/${year}`;
   }
 
   return {

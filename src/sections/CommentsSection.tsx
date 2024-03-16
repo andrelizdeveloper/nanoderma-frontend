@@ -107,7 +107,7 @@ export default function CommentsSection () {
 
           <form className='flex flex-col gap-4' onSubmit={startPostComment}>
 
-            <h2 className="text-2xl font-semibold text-gray-800">Comentarios</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">Escribir Testimonio</h2>
 
             { shouldShowAlert === 'success' && <SuccessAlert/> }
 
@@ -143,7 +143,7 @@ export default function CommentsSection () {
 
           <div className='flex flex-col gap-4'>
 
-            <h2 className="text-2xl font-semibold text-gray-800">Comentarios Pasados</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">Testimonios</h2>
 
             {savedComments.map((row, key) => <ComponentElement key={key} {...row}/> )}
 
