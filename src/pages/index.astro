@@ -96,7 +96,7 @@ type SectionData = {
 
 	<div id="contact-me-title"/>
 
-	<header class="p-6 md:h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left gap-6">
+	<header class="p-6 md:h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left gap-6 md:px-40">
 
 		<div class="flex flex-col gap-6">
 
@@ -137,7 +137,7 @@ type SectionData = {
 
 		</div>
 
-		<div class="h-40 w-40 border-2 border-white rounded-full bg-white header-pp"/>
+		<div class="min-h-40 min-w-40 border-2 border-white rounded-full bg-white header-pp"/>
 
 	</header>
 
@@ -155,7 +155,7 @@ type SectionData = {
 
 			</div>
 
-			<div class:list={[ `${section.bgImageClass} h-60 md:h-auto md:h-auto`, { 'md:order-1':(row % 2 !== 0), 'md:order-2':(row % 2 === 0) } ]}/>
+			<div class:list={[ `${section.bgImageClass} h-60 md:h-auto`, { 'md:order-1':(row % 2 !== 0), 'md:order-2':(row % 2 === 0) } ]}/>
 
 		</section>
 
@@ -163,37 +163,37 @@ type SectionData = {
 	
 	<CasosSection client:visible/>
 
-	<section class="p-6 bg-gray-100 flex flex-col gap-6">
+	<section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
 
 		<h2 class="text-2xl font-semibold text-gray-800">Avances NANODERMA</h2>
 
 		<div class="flex flex-wrap gap-6">
 
-			{avancesList.map((avance) => <img src={avance} class="md:h-80 border border-gray-300"/>)}
+			{avancesList.map((avance) => <img src={avance} class="md:h-80 border border-gray-300 rounded"/>)}
 
 		</div>
 
 	</section>
 
-	<section class="p-6 bg-gray-800 flex flex-col gap-6">
+	<section class="p-6 bg-gray-800 flex flex-col gap-6 md:px-40">
 
 		<h2 class="text-2xl font-semibold text-white">Mi Trabajo</h2>
 
 		<div class="flex flex-wrap gap-6">
 
-			{myWorkImages.map((img) => <img src={img} class="md:h-80 border border-gray-100"/>)}
+			{myWorkImages.map((img) => <img src={img} class="md:h-80 border border-gray-100 rounded"/>)}
 
 		</div>
 
 	</section>
 
-	<section class="p-6 bg-gray-100 flex flex-col gap-6">
+	<section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
 
 		<h2 class="text-2xl font-semibold text-gray-800">Recomendaciones e Información de NANODERMA</h2>
 
 		<div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-			{tipList.map((tip) => <img src={tip} class="border border-gray-300"/>)}
+			{tipList.map((tip) => <img src={tip} class="border border-gray-300 rounded"/>)}
 
 		</div>
 

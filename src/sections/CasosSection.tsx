@@ -16,7 +16,7 @@ export default function CasosSection () {
 
       <div id="casos-exito-title"/>
 
-      <section className="p-6 bg-gray-800 flex flex-col gap-6">
+      <section className="p-6 bg-gray-800 flex flex-col gap-6 md:px-40">
 
         <div className="flex justify-between items-center">
 
@@ -32,7 +32,7 @@ export default function CasosSection () {
 
           {casosExitoList.map((caso, key) => (
 
-            <div className="flex flex-col gap-6" key={key}>
+            <div className="flex flex-col gap-6 p-6 rounded border" key={key}>
 
               <div>
 
