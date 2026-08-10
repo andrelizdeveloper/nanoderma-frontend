@@ -1,63 +1,55 @@
 ---
-
 // Components
 import Topbar from '../components/Topbar.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
-
 ---
 
 <!doctype html>
-
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
 
-	<head>
+        <meta name="description" content="Astro description" />
 
-		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
 
-		<meta name="description" content="Astro description" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
 
-		<meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <body class="bg-gray-100">
+        <Topbar />
 
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <div class="pt-14"></div>
 
-	</head>
+        <slot />
 
-	<body class="bg-gray-100">
-
-		<Topbar/>
-
-		<div class="pt-14"/>
-
-		<slot />
-
-		<Footer/>
-
-	</body>
-
+        <Footer />
+    </body>
 </html>
 
 <style is:global>
-
-	body {
-		font-family: 'Montserrat', sans-serif;
-		padding: 0;
-		margin: 0;
-	}
-	
+    body {
+        font-family: 'Montserrat', sans-serif;
+        padding: 0;
+        margin: 0;
+    }
 </style>

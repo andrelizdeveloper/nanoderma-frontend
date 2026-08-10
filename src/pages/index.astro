@@ -1,267 +1,255 @@
 ---
 // Components
-import Layout from "../layouts/Layout.astro";
-import PurpleButton from "../components/buttons/PurpleButton";
+import Layout from '../layouts/Layout.astro';
+import PurpleButton from '../components/buttons/PurpleButton';
 
 // Sections
-import CasosSection from "../sections/CasosSection";
-import VideosSection from "../sections/VideosSection";
-import CommentsSection from "../sections/CommentsSection";
+import CasosSection from '../sections/CasosSection';
+import VideosSection from '../sections/VideosSection';
+import CommentsSection from '../sections/CommentsSection';
 
 const sectionList: SectionData[] = [
-  {
-    subtitle: "",
-    title: "NANODERMA y Registros",
-    description: `
+    {
+        subtitle: '',
+        title: 'NANODERMA y Registros',
+        description: `
 			NANODERMA es un auxiliar de la cicatrización, que surge en el ámbito de la 
 			fisicoquímica de nanometriales. Obtiene su registro de patente #356103, en marzo de 2018. 
 			Así mismo, obtiene su registro sanitario de COFEPRIS #2191C2018 SSA, en septiembre del 2019.
 		`,
-    bgImageClass: "section-1-image",
-    id: "nanoderma-title",
-  },
+        bgImageClass: 'section-1-image',
+        id: 'nanoderma-title',
+    },
 
-  {
-    subtitle: "",
-    title: "BUAP",
-    description: `
+    {
+        subtitle: '',
+        title: 'BUAP',
+        description: `
 			NANODERMA es un desarrollo orgullosamente de la Benemérita Universidad Autónoma de Puebla, BUAP. 
 			En su proceso de fabricación toma 25 etapas perfectamente controladas y sistematizadas. NANODERMA 
 			es un desarrollo que surge luego de más de 10 años de investigación, tiempo en el que se estudió de 
 			cerca a las zeolitas y la planta tournefortia. Pulsis Patent, trabaja de manera integrada con empresas
 			certificadas y especializadas como son: PHARMAPACK e ININ.
 		`,
-    bgImageClass: "section-2-image",
-    id: "buap-title",
-  },
+        bgImageClass: 'section-2-image',
+        id: 'buap-title',
+    },
 ];
 
 const tipList: string[] = [
-  "/images/tips/img9.jpeg",
-  "/images/tips/img1.jpeg",
-  "/images/tips/img2.jpeg",
-  "/images/tips/img3.jpeg",
-  "/images/tips/img4.jpeg",
-  "/images/tips/img5.jpeg",
-  "/images/tips/img6.jpeg",
-  "/images/tips/img7.jpeg",
-  "/images/tips/img8.jpeg",
-  "/images/tips/img10.jpeg",
-  "/images/tips/img11.jpeg",
-  "/images/tips/img12.jpeg",
+    '/images/tips/img9.jpeg',
+    '/images/tips/img1.jpeg',
+    '/images/tips/img2.jpeg',
+    '/images/tips/img3.jpeg',
+    '/images/tips/img4.jpeg',
+    '/images/tips/img5.jpeg',
+    '/images/tips/img6.jpeg',
+    '/images/tips/img7.jpeg',
+    '/images/tips/img8.jpeg',
+    '/images/tips/img10.jpeg',
+    '/images/tips/img11.jpeg',
+    '/images/tips/img12.jpeg',
 ];
 
 const myWorkImages: string[] = [
-  "/images/mi-trabajo/img1.jpeg",
-  "/images/mi-trabajo/img2.jpeg",
-  "/images/mi-trabajo/img3.jpeg",
-  "/images/mi-trabajo/img4.jpeg",
-  "/images/mi-trabajo/img5.jpeg",
-  "/images/mi-trabajo/img6.jpeg",
-  "/images/mi-trabajo/img7.jpeg",
-  "/images/mi-trabajo/img8.jpeg",
-  "/images/mi-trabajo/img9.jpeg",
-  "/images/mi-trabajo/img10.jpeg",
-  "/images/mi-trabajo/img11.jpeg",
-  "/images/mi-trabajo/img12.jpeg",
-  "/images/mi-trabajo/img13.jpeg",
-  "/images/mi-trabajo/img14.jpeg",
-  "/images/mi-trabajo/img15.jpeg",
+    '/images/mi-trabajo/img1.jpeg',
+    '/images/mi-trabajo/img2.jpeg',
+    '/images/mi-trabajo/img3.jpeg',
+    '/images/mi-trabajo/img4.jpeg',
+    '/images/mi-trabajo/img5.jpeg',
+    '/images/mi-trabajo/img6.jpeg',
+    '/images/mi-trabajo/img7.jpeg',
+    '/images/mi-trabajo/img8.jpeg',
+    '/images/mi-trabajo/img9.jpeg',
+    '/images/mi-trabajo/img10.jpeg',
+    '/images/mi-trabajo/img11.jpeg',
+    '/images/mi-trabajo/img12.jpeg',
+    '/images/mi-trabajo/img13.jpeg',
+    '/images/mi-trabajo/img14.jpeg',
+    '/images/mi-trabajo/img15.jpeg',
 ];
 
 const avancesList: string[] = [
-  "/images/avances/img1.jpeg",
-  "/images/avances/img2.jpeg",
-  "/images/avances/img3.jpeg",
-  "/images/avances/img4.jpeg",
-  "/images/avances/img5.jpeg",
-  "/images/avances/img6.jpeg",
-  "/images/avances/img7.jpeg",
-  "/images/avances/img8.jpeg",
-  "/images/avances/img9.jpeg",
-  "/images/avances/img10.jpeg",
-  "/images/avances/img11.jpeg",
-  "/images/avances/img12.jpeg",
-  "/images/avances/img13.jpeg",
-  "/images/avances/img14.jpeg",
-  "/images/avances/img15.jpeg",
-  "/images/avances/img16.jpeg",
-  "/images/avances/img17.jpeg",
+    '/images/avances/img1.jpeg',
+    '/images/avances/img2.jpeg',
+    '/images/avances/img3.jpeg',
+    '/images/avances/img4.jpeg',
+    '/images/avances/img5.jpeg',
+    '/images/avances/img6.jpeg',
+    '/images/avances/img7.jpeg',
+    '/images/avances/img8.jpeg',
+    '/images/avances/img9.jpeg',
+    '/images/avances/img10.jpeg',
+    '/images/avances/img11.jpeg',
+    '/images/avances/img12.jpeg',
+    '/images/avances/img13.jpeg',
+    '/images/avances/img14.jpeg',
+    '/images/avances/img15.jpeg',
+    '/images/avances/img16.jpeg',
+    '/images/avances/img17.jpeg',
 ];
 
 type SectionData = {
-  title: string;
-  subtitle: string;
-  description: string;
-  bgImageClass: string;
-  id: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    bgImageClass: string;
+    id: string;
 };
 ---
 
 <Layout title="Casos de Éxito de NANODERMA por Gerardo Lizarán">
-  <div id="contact-me-title"></div>
+    <div id="contact-me-title"></div>
 
-  <header
-    class="p-6 md:h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left gap-6 md:px-40"
-  >
-    <div class="flex flex-col gap-6">
-      <div class="text-white">
-        <h1 class="text-2xl text-white font-semibold">
-          Casos de Éxito de NANODERMA
-        </h1>
-
-        <h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
-
-        <p class="md:w-8/12">
-          Representante médico de Pulsis Patent, con 25 años de experiencia en
-          el área de la salud. Desarrollando este producto en el Puerto de
-          Veracruz y demás ciudades.
-        </p>
-      </div>
-
-      <div
-        class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6"
-      >
-        <a
-          href="https://wa.me/522291614442?text=Hola,%20buen%20día,%20me%20interesa%20saber%20sobre%20NANODERMA"
-          target="_blank"
-        >
-          <PurpleButton>
-            <>
-              <span class="text-white">Whatsapp</span>
-
-              <svg
-                class="w-6 h-6 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1h-6.6a1 1 0 0 0-.7.3l-2.9 2.5c-.3.3-.8.1-.8-.3V17c0-.6-.4-1-1-1H5a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z"
-                ></path>
-              </svg>
-            </>
-          </PurpleButton>
-        </a>
-      </div>
-    </div>
-
-    <div
-      class="min-h-40 min-w-40 border-2 border-white rounded-full bg-white header-pp"
+    <header
+        class="p-6 md:h-96 bg-purple-700 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left gap-6 md:px-40"
     >
-    </div>
-  </header>
+        <div class="flex flex-col gap-6">
+            <div class="text-white">
+                <h1 class="text-2xl text-white font-semibold">Casos de Éxito de NANODERMA</h1>
 
-  {
-    sectionList.map((section, row) => (
-      <section
-        class="bg-gray-100 flex flex-col-reverse md:grid md:grid-cols-2"
-        id={section.id}
-      >
-        <div
-          class:list={[
-            "h-auto md:h-96 p-6 flex flex-col justify-center",
-            {
-              "md:order-1 bg-gray-800 text-white": row % 2 === 0,
-              "md:order-2 bg-gray-100": row % 2 !== 0,
-            },
-          ]}
-        >
-          <h2 class="text-sm">{section.subtitle}</h2>
+                <h2 class="text-xl text-white">Presentados por Gerardo Lizarán</h2>
 
-          <h2 class="text-xl font-medium">{section.title}</h2>
+                <p class="md:w-8/12">
+                    Representante médico de Pulsis Patent, con 25 años de experiencia en el área de
+                    la salud. Desarrollando este producto en el Puerto de Veracruz y demás ciudades.
+                </p>
+            </div>
 
-          <p>{section.description}</p>
+            <div
+                class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6"
+            >
+                <a
+                    href="https://wa.me/522291614442?text=Hola,%20buen%20día,%20me%20interesa%20saber%20sobre%20NANODERMA"
+                    target="_blank"
+                >
+                    <PurpleButton>
+                        <>
+                            <span class="text-white">Whatsapp</span>
+
+                            <svg
+                                class="w-6 h-6 text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1h-6.6a1 1 0 0 0-.7.3l-2.9 2.5c-.3.3-.8.1-.8-.3V17c0-.6-.4-1-1-1H5a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z"
+                                ></path>
+                            </svg>
+                        </>
+                    </PurpleButton>
+                </a>
+            </div>
         </div>
 
-        <div
-          class:list={[
-            `${section.bgImageClass} h-60 md:h-auto`,
-            { "md:order-1": row % 2 !== 0, "md:order-2": row % 2 === 0 },
-          ]}
-        />
-      </section>
-    ))
-  }
+        <div class="min-h-40 min-w-40 border-2 border-white rounded-full bg-white header-pp"></div>
+    </header>
 
-  <CasosSection client:visible />
+    {
+        sectionList.map((section, row) => (
+            <section
+                class="bg-gray-100 flex flex-col-reverse md:grid md:grid-cols-2"
+                id={section.id}
+            >
+                <div
+                    class:list={[
+                        'h-auto md:h-96 p-6 flex flex-col justify-center',
+                        {
+                            'md:order-1 bg-gray-800 text-white': row % 2 === 0,
+                            'md:order-2 bg-gray-100': row % 2 !== 0,
+                        },
+                    ]}
+                >
+                    <h2 class="text-sm">{section.subtitle}</h2>
 
-  <section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
-    <h2 class="text-2xl font-semibold text-gray-800">Avances NANODERMA</h2>
+                    <h2 class="text-xl font-medium">{section.title}</h2>
 
-    <div class="flex flex-wrap gap-6">
-      {
-        avancesList.map((avance) => (
-          <img src={avance} class="md:h-80 border border-gray-300 rounded" />
+                    <p>{section.description}</p>
+                </div>
+
+                <div
+                    class:list={[
+                        `${section.bgImageClass} h-60 md:h-auto`,
+                        { 'md:order-1': row % 2 !== 0, 'md:order-2': row % 2 === 0 },
+                    ]}
+                />
+            </section>
         ))
-      }
-    </div>
-  </section>
+    }
 
-  <section class="p-6 bg-gray-800 flex flex-col gap-6 md:px-40">
-    <h2 class="text-2xl font-semibold text-white">Mi Trabajo</h2>
+    <CasosSection client:visible />
 
-    <div class="flex flex-wrap gap-6">
-      {
-        myWorkImages.map((img) => (
-          <img src={img} class="md:h-80 border border-gray-100 rounded" />
-        ))
-      }
-    </div>
-  </section>
+    <section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
+        <h2 class="text-2xl font-semibold text-gray-800">Avances NANODERMA</h2>
 
-  <section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
-    <h2 class="text-2xl font-semibold text-gray-800">
-      Recomendaciones e Información de NANODERMA
-    </h2>
+        <div class="flex flex-wrap gap-6">
+            {
+                avancesList.map(avance => (
+                    <img src={avance} class="md:h-80 border border-gray-300 rounded" />
+                ))
+            }
+        </div>
+    </section>
 
-    <div
-      class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-    >
-      {
-        tipList.map((tip) => (
-          <img src={tip} class="border border-gray-300 rounded" />
-        ))
-      }
-    </div>
-  </section>
+    <section class="p-6 bg-gray-800 flex flex-col gap-6 md:px-40">
+        <h2 class="text-2xl font-semibold text-white">Mi Trabajo</h2>
 
-  <VideosSection client:visible />
+        <div class="flex flex-wrap gap-6">
+            {
+                myWorkImages.map(img => (
+                    <img src={img} class="md:h-80 border border-gray-100 rounded" />
+                ))
+            }
+        </div>
+    </section>
 
-  <CommentsSection client:load />
+    <section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
+        <h2 class="text-2xl font-semibold text-gray-800">
+            Recomendaciones e Información de NANODERMA
+        </h2>
+
+        <div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {tipList.map(tip => <img src={tip} class="border border-gray-300 rounded" />)}
+        </div>
+    </section>
+
+    <VideosSection client:visible />
+
+    <CommentsSection client:load />
 </Layout>
 
 <style>
-  .header-pp {
-    background-image: url("/images/header/img1.jpg");
-    background-size: cover;
-    background-position: center;
-  }
+    .header-pp {
+        background-image: url('/images/header/img1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
 
-  .section-1-image {
-    background-image: url("/images/sections/img1.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
+    .section-1-image {
+        background-image: url('/images/sections/img1.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
 
-  .section-2-image {
-    background-image: url("/images/sections/img2.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
+    .section-2-image {
+        background-image: url('/images/sections/img2.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
 
-  .section-3-image {
-    background-image: url("/images/sections/img3.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
+    .section-3-image {
+        background-image: url('/images/sections/img3.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
 
-  .blured-image {
-    filter: blur(5px);
-  }
+    .blured-image {
+        filter: blur(5px);
+    }
 </style>

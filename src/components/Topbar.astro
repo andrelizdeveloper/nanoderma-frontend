@@ -1,33 +1,37 @@
 ---
-
 // Components
 import PurpleButton from './buttons/PurpleButton';
 
-const sectionList:SectionData[] = [
-  { title: '¿Qué es NANODERMA?', id: 'nanoderma-title' },
-  { title: 'Casos de Éxito', id: 'casos-exito-title' },
+const sectionList: SectionData[] = [
+    { title: '¿Qué es NANODERMA?', id: 'nanoderma-title' },
+    { title: 'Casos de Éxito', id: 'casos-exito-title' },
 ];
 
 type SectionData = {
-  title: string;
-  id: string;
-}
-
+    title: string;
+    id: string;
+};
 ---
 
-<navbar class="py-3 bg-gray-800 flex justify-between md:justify-center items-center gap-6 px-6 fixed w-full z-10">
+<navbar
+    class="py-3 bg-gray-800 flex justify-between md:justify-center items-center gap-6 px-6 fixed w-full z-10"
+>
+    <div class="hidden md:flex gap-6">
+        {
+            sectionList.map(section => (
+                <a
+                    href={`#${section.id}`}
+                    class="text-white px-6 py-2 rounded-full hover:bg-gray-700"
+                >
+                    {section.title}
+                </a>
+            ))
+        }
+    </div>
 
-  <div class="hidden md:flex gap-6">
+    <span class="text-white md:hidden">NANODERMA</span>
 
-    {sectionList.map((section) => 
-      <a href={`#${section.id}`} class="text-white px-6 py-2 rounded-full hover:bg-gray-700">{section.title}</a>)}
-
-  </div>
-
-  <span class="text-white md:hidden">NANODERMA</span>
-
-  <a href="#contact-me-title">
-    <PurpleButton>Contáctame</PurpleButton>
-  </a>
-
+    <a href="#contact-me-title">
+        <PurpleButton>Contáctame</PurpleButton>
+    </a>
 </navbar>

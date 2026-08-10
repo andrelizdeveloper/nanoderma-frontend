@@ -10,159 +10,153 @@ import useDateHelper from '../helpers/dateHelper';
 
 type AlertOptions = 'success' | 'error' | null;
 
-const formInitialState = { name:'', comment:'' }
+const formInitialState = { name: '', comment: '' };
 
-export default function CommentsSection () {
+export default function CommentsSection() {
+    useEffect(() => {
+        startGetComments();
+    }, []);
 
-  useEffect(() => { startGetComments() }, []);
+    // Hooks
+    const { getDMYDate } = useDateHelper();
 
-  // Hooks
-  const { getDMYDate } = useDateHelper();
+    // Vars
+    const [isFormLoading, setIsFormLoading] = useState(false);
+    const [formData, setFormData] = useState(formInitialState);
+    const [savedComments, setSavedComments] = useState<GetCommentData[]>([]);
+    const [shouldShowAlert, setShouldShowAlert] = useState<AlertOptions>(null);
 
-  // Vars
-  const [ isFormLoading, setIsFormLoading ] = useState(false);
-  const [ formData, setFormData ] = useState(formInitialState);
-  const [ savedComments, setSavedComments ] = useState<GetCommentData[]>([]);
-  const [ shouldShowAlert, setShouldShowAlert ] = useState<AlertOptions>(null);
-  
-  // Is valid
-  const isFormInvalid = (formData.name === '' || formData.comment === '');
+    // Is valid
+    const isFormInvalid = formData.name === '' || formData.comment === '';
 
-  // On Change
-  function onChangeInput (e:React.ChangeEvent<HTMLInputElement>) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
-
-  function onChangeTextArea (e:React.ChangeEvent<HTMLTextAreaElement>) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
-
-  // Start
-  async function startGetComments () { 
-    const comments = await getCommentsApi();
-    setSavedComments(comments.data);
-  }
-
-  async function startPostComment (e:React.FormEvent<HTMLFormElement>) {
-    try {
-      e.preventDefault();
-      setIsFormLoading(true);
-      await postCommentApi(getFormValue());
-      setShouldShowAlert('success');
-      setFormData(formInitialState);
-      setTimeout(() => setShouldShowAlert(null), 3000);
-      setIsFormLoading(false);
-      startGetComments();
-    } catch (error) {
-      setShouldShowAlert('error');
-      setTimeout(() => setShouldShowAlert(null), 3000);
-      setIsFormLoading(false);
+    // On Change
+    function onChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     }
-  }
 
-  // Get
-  function getFormValue () {
-    return ({
-      name:formData.name.toUpperCase(),
-      comment:formData.comment,
-      date:getDMYDate()
-    });
-  }
+    function onChangeTextArea(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
 
-  return (
+    // Start
+    async function startGetComments() {
+        const comments = await getCommentsApi();
+        setSavedComments(comments.data);
+    }
 
-    <div className='bg-gray-100'>
-      <div className='p-6 bg-gray-100 flex flex-col md:px-40'>
-        <div className='flex flex-col md:grid md:grid-cols-2 gap-6'>
-          <form className='flex flex-col gap-6' onSubmit={startPostComment}>
+    async function startPostComment(e: React.FormEvent<HTMLFormElement>) {
+        try {
+            e.preventDefault();
+            setIsFormLoading(true);
+            await postCommentApi(getFormValue());
+            setShouldShowAlert('success');
+            setFormData(formInitialState);
+            setTimeout(() => setShouldShowAlert(null), 3000);
+            setIsFormLoading(false);
+            startGetComments();
+        } catch (error) {
+            setShouldShowAlert('error');
+            setTimeout(() => setShouldShowAlert(null), 3000);
+            setIsFormLoading(false);
+        }
+    }
 
-            <h2 className="text-2xl font-semibold text-gray-800">Escribir Testimonio</h2>
+    // Get
+    function getFormValue() {
+        return {
+            name: formData.name.toUpperCase(),
+            comment: formData.comment,
+            date: getDMYDate(),
+        };
+    }
 
-            { shouldShowAlert === 'success' && <SuccessAlert/> }
-            { shouldShowAlert === 'error' && <ErrorAlert/> }
+    return (
+        <div className="bg-gray-100">
+            <div className="p-6 bg-gray-100 flex flex-col md:px-40">
+                <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
+                    <form className="flex flex-col gap-6" onSubmit={startPostComment}>
+                        <h2 className="text-2xl font-semibold text-gray-800">
+                            Escribir Testimonio
+                        </h2>
 
-            <input 
-              className="title border border-gray-300 py-2 px-3 outline-none rounded" 
-              placeholder="Nombre" 
-              type="text"
-              onChange={onChangeInput}
-              name='name'
-              value={formData.name}
-              disabled={isFormLoading}
-            />
+                        {shouldShowAlert === 'success' && <SuccessAlert />}
+                        {shouldShowAlert === 'error' && <ErrorAlert />}
 
-            <textarea 
-              className="description bg-white sec p-3 h-40 border border-gray-300 outline-none rounded" 
-              placeholder="Comentario"
-              onChange={onChangeTextArea}
-              name='comment'
-              value={formData.comment}
-              disabled={isFormLoading}
-            />
+                        <input
+                            className="title border border-gray-300 py-2 px-3 outline-none rounded"
+                            placeholder="Nombre"
+                            type="text"
+                            onChange={onChangeInput}
+                            name="name"
+                            value={formData.name}
+                            disabled={isFormLoading}
+                        />
 
-            <div>
-              <PurpleButton 
-                type='submit'
-                disabled={isFormLoading || isFormInvalid}
-              >Enviar</PurpleButton>
+                        <textarea
+                            className="description bg-white sec p-3 h-40 border border-gray-300 outline-none rounded"
+                            placeholder="Comentario"
+                            onChange={onChangeTextArea}
+                            name="comment"
+                            value={formData.comment}
+                            disabled={isFormLoading}
+                        />
+
+                        <div>
+                            <PurpleButton type="submit" disabled={isFormLoading || isFormInvalid}>
+                                Enviar
+                            </PurpleButton>
+                        </div>
+                    </form>
+
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-2xl font-semibold text-gray-800">Testimonios</h2>
+                        {savedComments.map((row, key) => (
+                            <CommentElement key={key} {...row} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function CommentElement(props: GetCommentData) {
+    return (
+        <div className="flex flex-col gap-6">
+            <div className="flex flex-col border border-gray-300 bg-white rounded">
+                <div className="flex flex-col gap-2 p-6">
+                    <div className="flex flex-col">
+                        <h4 className="font-medium">{props.name}</h4>
+                        <small className="text-gray-600">{props.date}</small>
+                    </div>
+                    <p>{props.comment}</p>
+                </div>
             </div>
 
-          </form>
-
-          <div className='flex flex-col gap-6'>
-            <h2 className="text-2xl font-semibold text-gray-800">Testimonios</h2>
-            {savedComments.map((row, key) => <CommentElement key={key} {...row}/> )}
-          </div>
-
+            {props.id === 7 && (
+                <img
+                    src="/images/comments/img1.jpg"
+                    className="p-6 border border-gray-300 bg-white rounded"
+                />
+            )}
         </div>
-      </div>
-    </div>
-
-  )
-  
+    );
 }
 
-function CommentElement (props:GetCommentData) {
-  return (
-    <div className='flex flex-col gap-6'>
-
-      <div className='flex flex-col border border-gray-300 bg-white rounded'>
-        <div className='flex flex-col gap-2 p-6'>
-          <div className='flex flex-col'>
-            <h4 className='font-medium'>{props.name}</h4>
-            <small className='text-gray-600'>{props.date}</small>
-          </div>
-          <p>{props.comment}</p>
+function SuccessAlert() {
+    return (
+        <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-6" role="alert">
+            <p className="font-bold">Tu comentario ha sido publicado</p>
+            <p>Gracias por tu opinión</p>
         </div>
-      </div>
-
-      {
-        (props.id === 7)
-        &&
-        <img
-          src='/images/comments/img1.jpg'
-          className='p-6 border border-gray-300 bg-white rounded'
-        />
-      }
-
-    </div>
-  )
+    );
 }
 
-function SuccessAlert () {
-  return (
-    <div className='bg-green-100 border-l-4 border-green-500 text-green-700 p-6' role='alert'>
-      <p className='font-bold'>Tu comentario ha sido publicado</p>
-      <p>Gracias por tu opinión</p>
-    </div>
-  )
-}
-
-function ErrorAlert () {
-  return (
-    <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-6' role='alert'>
-      <p className='font-bold'>Tu comentario no ha sido publicado</p>
-      <p>Por favor, contacta al administrador</p>
-    </div>
-  )
+function ErrorAlert() {
+    return (
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-6" role="alert">
+            <p className="font-bold">Tu comentario no ha sido publicado</p>
+            <p>Por favor, contacta al administrador</p>
+        </div>
+    );
 }
