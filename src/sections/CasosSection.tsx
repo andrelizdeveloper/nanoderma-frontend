@@ -6,6 +6,10 @@ import PurpleButton from '../components/buttons/PurpleButton';
 
 export default function CasosSection() {
     const [isShowingPhotos, setIsShowingPhotos] = useState(false);
+    const baseUrl =
+        import.meta.env.BASE_URL.endsWith('/')
+            ? import.meta.env.BASE_URL
+            : `${import.meta.env.BASE_URL}/`;
 
     const toggleShowPhotos = () => setIsShowingPhotos(!isShowingPhotos);
 
@@ -36,7 +40,7 @@ export default function CasosSection() {
                             <div className="grid grid-cols-2 md:grid-cols-4">
                                 {caso.images.map((img, key) => (
                                     <img
-                                        src={img}
+                                        src={`${baseUrl}${img.replace(/^\//, '')}`}
                                         className="aspect-square"
                                         style={{ filter: isShowingPhotos ? '' : 'blur(5px)' }}
                                         key={key}
