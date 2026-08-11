@@ -11,6 +11,7 @@ import useDateHelper from '../helpers/dateHelper';
 type AlertOptions = 'success' | 'error' | null;
 
 const formInitialState = { name: '', comment: '' };
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
 export default function CommentsSection() {
     useEffect(() => {
@@ -135,7 +136,7 @@ function CommentElement(props: GetCommentData) {
 
             {props.id === 7 && (
                 <img
-                    src="/images/comments/img1.jpg"
+                    src={withBase('images/comments/img1.jpg')}
                     className="p-6 border border-gray-300 bg-white rounded"
                 />
             )}

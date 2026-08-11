@@ -4,6 +4,8 @@ import { useState } from 'react';
 // Components
 import PurpleButton from '../components/buttons/PurpleButton';
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 export default function CasosSection() {
     const [isShowingPhotos, setIsShowingPhotos] = useState(false);
 
@@ -36,7 +38,7 @@ export default function CasosSection() {
                             <div className="grid grid-cols-2 md:grid-cols-4">
                                 {caso.images.map((img, key) => (
                                     <img
-                                        src={img}
+                                        src={withBase(img)}
                                         className="aspect-square"
                                         style={{ filter: isShowingPhotos ? '' : 'blur(5px)' }}
                                         key={key}

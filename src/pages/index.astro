@@ -8,6 +8,8 @@ import CasosSection from '../sections/CasosSection';
 import VideosSection from '../sections/VideosSection';
 import CommentsSection from '../sections/CommentsSection';
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 const sectionList: SectionData[] = [
     {
         subtitle: '',
@@ -17,7 +19,7 @@ const sectionList: SectionData[] = [
 			fisicoquímica de nanometriales. Obtiene su registro de patente #356103, en marzo de 2018. 
 			Así mismo, obtiene su registro sanitario de COFEPRIS #2191C2018 SSA, en septiembre del 2019.
 		`,
-        bgImageClass: 'section-1-image',
+        bgImagePath: 'images/sections/img1.jpeg',
         id: 'nanoderma-title',
     },
 
@@ -31,7 +33,7 @@ const sectionList: SectionData[] = [
 			cerca a las zeolitas y la planta tournefortia. Pulsis Patent, trabaja de manera integrada con empresas
 			certificadas y especializadas como son: PHARMAPACK e ININ.
 		`,
-        bgImageClass: 'section-2-image',
+        bgImagePath: 'images/sections/img2.jpeg',
         id: 'buap-title',
     },
 ];
@@ -93,7 +95,7 @@ type SectionData = {
     title: string;
     subtitle: string;
     description: string;
-    bgImageClass: string;
+    bgImagePath: string;
     id: string;
 };
 ---
@@ -148,7 +150,11 @@ type SectionData = {
             </div>
         </div>
 
-        <div class="min-h-40 min-w-40 border-2 border-white rounded-full bg-white header-pp"></div>
+        <div
+            class="min-h-40 min-w-40 border-2 border-white rounded-full bg-white bg-cover bg-center"
+            style={`background-image: url('${withBase('images/header/img1.jpg')}')`}
+        >
+        </div>
     </header>
 
     {
@@ -175,9 +181,10 @@ type SectionData = {
 
                 <div
                     class:list={[
-                        `${section.bgImageClass} h-60 md:h-auto`,
+                        'h-60 md:h-auto bg-cover bg-center',
                         { 'md:order-1': row % 2 !== 0, 'md:order-2': row % 2 === 0 },
                     ]}
+                    style={`background-image: url('${withBase(section.bgImagePath)}')`}
                 />
             </section>
         ))
@@ -191,7 +198,7 @@ type SectionData = {
         <div class="flex flex-wrap gap-6">
             {
                 avancesList.map(avance => (
-                    <img src={avance} class="md:h-80 border border-gray-300 rounded" />
+                    <img src={withBase(avance)} class="md:h-80 border border-gray-300 rounded" />
                 ))
             }
         </div>
@@ -203,7 +210,7 @@ type SectionData = {
         <div class="flex flex-wrap gap-6">
             {
                 myWorkImages.map(img => (
-                    <img src={img} class="md:h-80 border border-gray-100 rounded" />
+                    <img src={withBase(img)} class="md:h-80 border border-gray-100 rounded" />
                 ))
             }
         </div>
@@ -215,7 +222,7 @@ type SectionData = {
         </h2>
 
         <div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {tipList.map(tip => <img src={tip} class="border border-gray-300 rounded" />)}
+            {tipList.map(tip => <img src={withBase(tip)} class="border border-gray-300 rounded" />)}
         </div>
     </section>
 
@@ -223,33 +230,3 @@ type SectionData = {
 
     <CommentsSection client:load />
 </Layout>
-
-<style>
-    .header-pp {
-        background-image: url('/images/header/img1.jpg');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-1-image {
-        background-image: url('/images/sections/img1.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-2-image {
-        background-image: url('/images/sections/img2.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-3-image {
-        background-image: url('/images/sections/img3.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .blured-image {
-        filter: blur(5px);
-    }
-</style>
