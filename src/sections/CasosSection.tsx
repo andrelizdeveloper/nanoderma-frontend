@@ -6,10 +6,9 @@ import PurpleButton from '../components/buttons/PurpleButton';
 
 export default function CasosSection() {
     const [isShowingPhotos, setIsShowingPhotos] = useState(false);
-    const baseUrl =
-        import.meta.env.BASE_URL.endsWith('/')
-            ? import.meta.env.BASE_URL
-            : `${import.meta.env.BASE_URL}/`;
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+        ? import.meta.env.BASE_URL
+        : `${import.meta.env.BASE_URL}/`;
 
     const toggleShowPhotos = () => setIsShowingPhotos(!isShowingPhotos);
 
