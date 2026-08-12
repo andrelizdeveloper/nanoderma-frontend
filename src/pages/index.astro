@@ -5,7 +5,6 @@ import PurpleButton from '../components/buttons/PurpleButton';
 
 // Sections
 import CasosSection from '../sections/CasosSection';
-import VideosSection from '../sections/VideosSection';
 import CommentsSection from '../sections/CommentsSection';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -222,8 +221,6 @@ type SectionData = {
             {tipList.map(tip => <img src={tip} class="border border-gray-300 rounded" />)}
         </div>
     </section>
-
-    <VideosSection client:visible />
 
     <CommentsSection client:load />
 </Layout>
