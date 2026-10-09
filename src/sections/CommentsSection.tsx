@@ -12,6 +12,10 @@ type AlertOptions = 'success' | 'error' | null;
 
 const formInitialState = { name: '', comment: '' };
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+
 export default function CommentsSection() {
     useEffect(() => {
         startGetComments();
@@ -132,10 +136,9 @@ function CommentElement(props: GetCommentData) {
                     <p>{props.comment}</p>
                 </div>
             </div>
-
             {props.id === 7 && (
                 <img
-                    src="/images/comments/img1.jpg"
+                    src={`${baseUrl}images/comments/img1.jpg`}
                     className="p-6 border border-gray-300 bg-white rounded"
                 />
             )}
