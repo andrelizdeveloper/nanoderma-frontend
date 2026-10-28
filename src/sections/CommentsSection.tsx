@@ -71,6 +71,7 @@ export default function CommentsSection() {
             name: formData.name.toUpperCase(),
             comment: formData.comment,
             date: getDMYDate(),
+            imgLink: ''
         };
     }
 
@@ -136,9 +137,9 @@ function CommentElement(props: GetCommentData) {
                     <p>{props.comment}</p>
                 </div>
             </div>
-            {props.id === 7 && (
+            {props.imgLink !== null && props.imgLink !== '' && (
                 <img
-                    src={`${baseUrl}images/comments/img1.jpg`}
+                    src={`${baseUrl}images/comments/${props.imgLink}.jpg`}
                     className="p-6 border border-gray-300 bg-white rounded"
                 />
             )}

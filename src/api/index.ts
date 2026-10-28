@@ -24,6 +24,7 @@ export type PostCommentData = {
     date: string;
     name: string;
     comment: string;
+    imgLink: string | null;
 };
 
 export type GetCommentData = PostCommentData & { id: number };
