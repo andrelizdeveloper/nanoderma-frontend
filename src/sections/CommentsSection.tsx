@@ -71,7 +71,7 @@ export default function CommentsSection() {
             name: formData.name.toUpperCase(),
             comment: formData.comment,
             date: getDMYDate(),
-            imgLink: ''
+            imgLink: '',
         };
     }
 
