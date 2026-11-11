@@ -73,7 +73,6 @@ const myWorkImages: string[] = [
     `${baseUrl}images/mi-trabajo/img16.jpeg`,
     `${baseUrl}images/mi-trabajo/img17.jpeg`,
     `${baseUrl}images/mi-trabajo/img18.jpeg`,
-    `${baseUrl}images/mi-trabajo/img19.jpeg`,
 ];
 
 const avancesList: string[] = [
@@ -211,11 +210,10 @@ type SectionData = {
         </div>
     </section>
 
-    <section class="p-6 bg-gray-100 flex flex-col gap-6 md:px-40">
+    <section class="p-6 bg-gray-100 flex flex-col gap-6 lg:px-40">
         <h2 class="text-2xl font-semibold text-gray-800">
             Recomendaciones e Información de NANODERMA
         </h2>
-
         <div class="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {tipList.map(tip => <img src={tip} class="border border-gray-300 rounded" />)}
         </div>
