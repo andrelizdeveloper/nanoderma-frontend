@@ -77,7 +77,7 @@ export default function CommentsSection() {
 
     return (
         <div className="bg-gray-100">
-            <div className="p-6 bg-gray-100 flex flex-col md:px-40">
+            <div className="p-6 bg-gray-100 flex flex-col lg:px-40">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
                     <form className="flex flex-col gap-6" onSubmit={startPostComment}>
                         <h2 className="text-2xl font-semibold text-gray-800">
