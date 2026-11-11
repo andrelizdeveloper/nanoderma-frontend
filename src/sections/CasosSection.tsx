@@ -16,7 +16,7 @@ export default function CasosSection() {
         <>
             <div id="casos-exito-title" />
 
-            <section className="p-6 bg-gray-800 flex flex-col gap-6 md:px-40">
+            <section className="p-6 bg-gray-800 flex flex-col gap-6 lg:px-40">
                 <div className="flex justify-between items-center">
                     <h2 className="text-white text-2xl font-semibold">Casos de Éxito</h2>
 
