@@ -10,6 +10,10 @@ export const axiosInstance = axios.create({
         apiKey: apiKey,
         Authorization: `Bearer ${apiKey}`,
     },
+    params: {
+        select: '*',
+        order: 'id.asc',
+    },
 });
 
 export function postCommentApi(data: PostCommentData) {
